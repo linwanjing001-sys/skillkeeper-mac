@@ -1,19 +1,40 @@
 # SkillKeeper Mac
 
-SkillKeeper is a local macOS workspace for discovering, browsing, and managing AI Skills across Codex, Agent Skills, Superpowers, Cursor, WorkBuddy, CodeBuddy, and other local tool directories.
+SkillKeeper 是一个轻量、漂亮、面向本地 AI Skill 的 macOS 管理工具。它可以自动发现 Codex、Agent Skills、Superpowers、Cursor、WorkBuddy、CodeBuddy 等工具目录里的 Skill，并提供浏览、搜索、收藏、统计、删除和详情查看能力。
 
-It is built with Electron, React, TypeScript, and Vite.
+## 为什么做这个工具
 
-## Highlights
+市面上已经有一些 Skill 管理器或类似工具，但我一直觉得有两个地方不太满意：一是不够美观，二是不够轻量。Skill 本身是 AI 工作流里非常高频、非常个人化的东西，它应该像一个顺手的本地工作台，而不是一个笨重的后台系统。
 
-- Dynamic local Skill discovery from tool directories such as `~/.codex/skills`, `~/.agents/skills`, `~/superpowers/skills`, `~/.cursor/skills`, `~/.workbuddy/skills`, `~/.codebuddy/skills`, `~/.config/*/skills`, and more.
-- Codex source hierarchy with `Codex-用户` and `Codex-内置` sub-filters.
-- Usage-count sorting based on local Codex/Agent session logs and SkillKeeper usage logs.
-- Favorites stored locally in `localStorage`.
-- Delete mode that moves selected Skill folders to the macOS Trash instead of permanently deleting them.
-- Right-side Skill inspector with description, source, location, size, status, tags, usage count, and last-used time.
-- Light/dark/system theme switcher with a jewel-style dark mode.
-- macOS app icon and local decorative UI assets.
+所以我重新做了 SkillKeeper。它免费开源，主要是想分享给同样在折腾 AI 工作流、Agent、Codex Skill 的朋友们：你可以直接拿来管理自己的本地 Skill，也可以基于这个项目继续改造成更适合自己的版本。
+
+如果你对 AI 产品、Agent 工作流、个人效率工具和开源实践感兴趣，也欢迎关注我的微信公众号：**林万劲的AI思考**。后面我会持续分享更多关于 AI 工具、工作流和开源项目的内容。
+
+## 它能做什么
+
+- 自动扫描本机工具目录中的 Skill，例如 `~/.codex/skills`、`~/.agents/skills`、`~/superpowers/skills`、`~/.cursor/skills`、`~/.workbuddy/skills`、`~/.codebuddy/skills`、`~/.config/*/skills` 等。
+- 按来源浏览 Skill，并支持 `Codex-用户` / `Codex-内置` 这样的子来源筛选。
+- 根据本机 Codex / Agent session 日志和 SkillKeeper 使用日志估算调用次数，默认按使用次数降序排列。
+- 支持收藏 Skill，并在左侧单独查看收藏列表。
+- 支持删除模式，进入删除模式后可勾选、全选，并将 Skill 文件夹移动到 macOS 废纸篓。
+- 点击 Skill 后在右侧详情页展示简介、来源、路径、大小、状态、标签、调用次数和最近调用时间。
+- 支持跟随系统、浅色、暗黑三种外观模式，其中暗黑模式采用宝石质感视觉。
+- 保持本地优先，不上传 Skill 内容、对话日志或使用数据。
+
+## 适合谁
+
+- 正在使用 Codex / Agent Skills / Superpowers 的用户。
+- 本地 Skill 越来越多，想要一个统一入口的人。
+- 想知道哪些 Skill 最常被调用、哪些 Skill 长期闲置的人。
+- 希望把自己的 AI 工作流整理得更清爽、更可视化的人。
+- 想基于 Electron + React + TypeScript 做本地效率工具的开发者。
+
+## 技术栈
+
+- Electron
+- React
+- TypeScript
+- Vite
 
 ## Privacy
 
