@@ -1,6 +1,10 @@
 # SkillKeeper Mac
 
 SkillKeeper 是一个轻量、漂亮、面向本地 AI Skill 的 macOS 管理工具。它可以自动发现 Codex、Agent Skills、Superpowers、Cursor、WorkBuddy、CodeBuddy 等工具目录里的 Skill，并提供浏览、搜索、收藏、统计、删除和详情查看能力。
+<img width="2940" height="64" alt="image" src="https://github.com/user-attachments/assets/d2491509-6d3d-4106-8da4-b3bc8f38b6e0" />
+
+<img width="2560" height="1640" alt="image" src="https://github.com/user-attachments/assets/b974527a-ec7d-4fd5-82ea-08d2627615bd" />
+
 
 ## 为什么做这个工具
 
