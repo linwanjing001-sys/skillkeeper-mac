@@ -1,0 +1,64 @@
+{
+  "name": "skillkeeper-mac",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Mac Skill management workbench.",
+  "author": "Lin Wanjing",
+  "license": "MIT",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "npm run build:electron && concurrently -k \"vite --host 127.0.0.1 --port 5173\" \"wait-on tcp:5173 && electron .\"",
+    "build": "npm run build:electron && vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "capture": "electron scripts/capture-preview.cjs",
+    "click-audit": "electron scripts/click-audit.cjs",
+    "test:ui": "node scripts/ui-contract-test.cjs",
+    "test:usage": "npm run build:electron && node scripts/usage-parser-test.cjs",
+    "test:sources": "npm run build:electron && node scripts/source-discovery-test.cjs",
+    "electron:install": "ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ install-electron --no",
+    "package:mac": "npm run build && ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ electron-builder --mac --arm64",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.electron.json --noEmit"
+  },
+  "build": {
+    "appId": "com.linwanjing.skillkeeper",
+    "productName": "SkillKeeper",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "extraMetadata": {
+      "main": "dist-electron/main.js"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "target": [
+        "dir",
+        "dmg"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.4",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "concurrently": "^9.2.1",
+    "electron": "^42.3.3",
+    "electron-builder": "^26.15.2",
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "wait-on": "^9.0.3"
+  }
+}

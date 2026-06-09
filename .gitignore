@@ -1,0 +1,14 @@
+.DS_Store
+.dev.log
+
+node_modules/
+dist/
+dist-electron/
+release/
+
+*.log
+*.tmp
+
+skillkeeper-preview.png
+build/icon.iconset/
+docs/superpowers/
